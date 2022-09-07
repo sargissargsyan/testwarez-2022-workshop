@@ -14,7 +14,7 @@ public class RegisterTest extends SeleniumBase {
 
     @Test
     public void register() {
-        RegisterPage registerPage = new RegisterPage();
+        RegisterPage registerPage = new RegisterPage().open();
         registerPage.setFullName("Testwarez Name");
         registerPage.setUsername(username);
         registerPage.setpassword(password);

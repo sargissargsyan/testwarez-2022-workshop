@@ -8,7 +8,7 @@ import com.google.gson.JsonObject;
  * @project testwarez2022
  */
 public class ProjectPage extends BasePage<ProjectPage> {
-    JsonObject project;
+    private JsonObject project;
     public ProjectPage(JsonObject project) {
         this.project = project;
     }
@@ -25,7 +25,7 @@ public class ProjectPage extends BasePage<ProjectPage> {
 
     @Override
     public String getUrl() {
-        return BASE_URL + "/project/" + project.get("slug").getAsString();
+        return "/project/" + project.get("slug").getAsString();
     }
 
     @Override

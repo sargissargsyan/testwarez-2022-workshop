@@ -23,9 +23,8 @@ public class IssuePage extends BasePage<IssuePage> {
     private WebElement assignee;
 
     JsonObject issue;
-    public IssuePage(JsonObject issue) throws IOException {
+    public IssuePage(JsonObject issue) {
         this.issue = issue;
-        WaitHelper.getWait().waitForElementToBeVisible(By.cssSelector(".detail-title-text"));
     }
 
     @Override
@@ -40,7 +39,8 @@ public class IssuePage extends BasePage<IssuePage> {
 
     @Override
     public String getUrl() {
-        return "/project/" + projectId + "/issues" ;
+        return "/project/" + issue.get("project_extra_info").getAsJsonObject().get("slug").getAsString()
+                + "/issue/" + issue.get("ref") ;
     }
 
     public String getIssueInnerStatus() {

@@ -58,6 +58,7 @@ public class RegisterPage extends BasePage<RegisterPage> {
 
     public void  clickSignUpButton() {
         signUpButton.click();
+
     }
 
     @Override

@@ -22,6 +22,7 @@ public class LoginPage extends BasePage<LoginPage> {
 
     @Override
     protected void isLoaded() throws Error {
+        WaitHelper.getWait().waitForElementToBeVisible(By.name("username"));
     }
 
     @Override
